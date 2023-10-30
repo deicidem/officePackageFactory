@@ -1,13 +1,13 @@
-import type { TextEditorProgram } from '../AbstractFactory'
+import { TextEditorProgram } from "../AbstractFactory";
 
 export class GoogleTextEditorProgram implements TextEditorProgram {
-  name = 'Google Docs'
-  text = ''
+  name = "Google Docs";
+  text = "";
   changeText(newText: string): void {
-    this.text = newText
-    console.log('Text is changed')
+    this.text = newText;
+    console.log("Text is changed");
   }
   saveText(path: string): void {
-    console.log('Text is saved in: ' + path)
+    console.log("Text is saved in: " + path);
   }
 }

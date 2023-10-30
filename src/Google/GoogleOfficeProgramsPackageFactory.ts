@@ -1,21 +1,23 @@
-import type {
+import {
   OfficeProgramsPackageFactory,
   TextEditorProgram,
   TablesProgram,
-  PresentationsProgram
-} from '../AbstractFactory'
-import { GooglePresentationsProgram } from './GooglePresentationsProgram'
-import { GoogleTablesProgram } from './GoogleTablesProgram'
-import { GoogleTextEditorProgram } from './GoogleTextEditorProgram'
+  PresentationsProgram,
+} from "../AbstractFactory";
+import { GooglePresentationsProgram } from "./GooglePresentationsProgram";
+import { GoogleTablesProgram } from "./GoogleTablesProgram";
+import { GoogleTextEditorProgram } from "./GoogleTextEditorProgram";
 
-export class GoogleOfficeProgramsPackageFactory implements OfficeProgramsPackageFactory {
+export class GoogleOfficeProgramsPackageFactory
+  implements OfficeProgramsPackageFactory
+{
   createTextEditorProgram(): TextEditorProgram {
-    return new GoogleTextEditorProgram()
+    return new GoogleTextEditorProgram();
   }
   createTablesProgram(): TablesProgram {
-    return new GoogleTablesProgram()
+    return new GoogleTablesProgram();
   }
   createPresentationsProgram(): PresentationsProgram {
-    return new GooglePresentationsProgram()
+    return new GooglePresentationsProgram();
   }
 }
