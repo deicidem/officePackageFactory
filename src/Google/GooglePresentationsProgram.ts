@@ -1,20 +1,18 @@
-import { PresentationsProgram, Slide } from "../AbstractFactory";
+import type { PresentationsProgram, Slide } from '../AbstractFactory'
 
 export class GooglePresentationsProgram implements PresentationsProgram {
-  slides: Slide[];
-  name = "Google Slides";
+  slides: Slide[]
+  name = 'Google Slides'
   constructor() {
-    this.slides = [];
+    this.slides = []
   }
   createSlide(slide: Slide) {
-    this.slides.push(slide);
+    this.slides.push(slide)
   }
   changeSlide(slideId: number, content: object): void {
-    this.slides = this.slides.map((s) =>
-      s.id == slideId ? { ...s, content } : s
-    );
+    this.slides = this.slides.map((s) => (s.id == slideId ? { ...s, content } : s))
   }
   savePresentation(path: string): void {
-    console.log("Presentation is saved in: " + path);
+    console.log('Presentation is saved in: ' + path)
   }
 }

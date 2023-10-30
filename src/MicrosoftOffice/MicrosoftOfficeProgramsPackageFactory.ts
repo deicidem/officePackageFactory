@@ -1,23 +1,21 @@
-import {
+import type {
   OfficeProgramsPackageFactory,
   TextEditorProgram,
   TablesProgram,
-  PresentationsProgram,
-} from "../AbstractFactory";
-import { MicrosoftPresentationsProgram } from "./MicrosoftPresentationsProgram";
-import { MicrosoftTablesProgram } from "./MicrosoftTablesProgram";
-import { MicrosoftTextEditorProgram } from "./MicrosoftTextEditorProgram";
+  PresentationsProgram
+} from '../AbstractFactory'
+import { MicrosoftPresentationsProgram } from './MicrosoftPresentationsProgram'
+import { MicrosoftTablesProgram } from './MicrosoftTablesProgram'
+import { MicrosoftTextEditorProgram } from './MicrosoftTextEditorProgram'
 
-export class MicrosoftOfficeProgramsPackageFactory
-  implements OfficeProgramsPackageFactory
-{
+export class MicrosoftOfficeProgramsPackageFactory implements OfficeProgramsPackageFactory {
   createTextEditorProgram(): TextEditorProgram {
-    return new MicrosoftTextEditorProgram();
+    return new MicrosoftTextEditorProgram()
   }
   createTablesProgram(): TablesProgram {
-    return new MicrosoftTablesProgram();
+    return new MicrosoftTablesProgram()
   }
   createPresentationsProgram(): PresentationsProgram {
-    return new MicrosoftPresentationsProgram();
+    return new MicrosoftPresentationsProgram()
   }
 }
