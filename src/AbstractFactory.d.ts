@@ -1,27 +1,39 @@
 export interface OfficeProgramsPackageFactory {
-  createDocumentProgram(): DocumentProgram;
+  createTextEditorProgram(): TextEditorProgram;
   createTablesProgram(): TablesProgram;
   createPresentationsProgram(): PresentationsProgram;
 }
 
-export interface Program {
+interface Program {
   name: string;
 }
 
-export interface DocumentProgram extends Program {
+export interface TextEditorProgram extends Program {
   text: string;
-  changeText(): void;
+  changeText(newText): void;
   saveText(path: string): void;
 }
 
+interface Table {
+  id: number;
+  content: object;
+}
+
 export interface TablesProgram extends Program {
-  tables: object[];
-  changeTable(tableId: number): void;
+  tables: Table[];
+  createTable(table: Table): void;
+  changeTable(tableId: number, content: object): void;
   saveTables(path: string): void;
 }
 
+interface Slide {
+  id: number;
+  content: object;
+}
+
 export interface PresentationsProgram extends Program {
-  slides: object[];
-  changeSlide(slideId: number): void;
+  slides: Slide[];
+  createSlide(slide: Slide): void;
+  changeSlide(slideId: number, content: object): void;
   savePresentation(path: string): void;
 }
